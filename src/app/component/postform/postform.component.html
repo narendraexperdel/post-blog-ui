@@ -1,0 +1,13 @@
+<div class="container">
+    <app-headers></app-headers>
+  <form (ngSubmit)="postSubmit()">
+    <div class= "form-group">
+   <input type = "text" class = "form-control" [(ngModel)]= "postdata.posttitle" name = "title" placeholder="Title">
+  </div>
+  <div class= "form-group">
+   <textarea rows="4" cols="50" class = "form-control" [(ngModel)]= "postdata.postdesc" name = "description" placeholder="Title">
+     </textarea>
+</div>
+   <button type ="submit">Save</button>
+  </form>
+</div>

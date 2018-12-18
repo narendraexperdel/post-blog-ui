@@ -1,0 +1,38 @@
+<div class="container">
+  <app-headers></app-headers>
+  <form (ngSubmit)="submitUser()" #signupForm = "ngForm">
+    <div class = "form-group">
+      <input type = "text" name = "firstname" [(ngModel)] ="userdata.firstname" class="form-control" 
+      [class.is-invalid] ="fname.invalid && fname.touched" placeholder="Firstname" required #fname ="ngModel">
+      <small [class.d-none]= "fname.valid || fname.untouched">Firstname is required</small>
+    </div>
+    <div class = "form-group">
+      <input type = "text" name = "lastname" [(ngModel)] ="userdata.lastname" class="form-control" placeholder="Lastname" 
+      [class.is-invalid] ="lname.invalid && lname.touched" required #lname = "ngModel">
+      <small [class.d-none]= "lname.valid || lname.untouched">Lastname is required</small>
+    </div>
+    <div class ="form-group">
+      <input type = "text" name = "email" class="form-control" [(ngModel)] ="userdata.email" placeholder="Email" 
+      [class.is-invalid] ="email.invalid && email.touched" required #email = "ngModel">
+      <small [class.d-none]= "email.valid || email.untouched">Email is required</small>
+    </div>
+    <div class = "form-group">
+      <input type = "password" name = "password" [(ngModel)] ="userdata.password" class="form-control" placeholder="Password" 
+      [class.is-invalid] ="pass.invalid && pass.touched" required #pass = "ngModel">
+      <small [class.d-none]= "pass.valid || pass.untouched">Password is required</small>
+    </div>
+    <div class= "form-group">
+       <input type = "password" name = "confirmPass" [(ngModel)] ="userdata.confirmPass" class= "form-control" placeholder="Confirm Password" 
+       [class.is-invalid] ="confpass.invalid && confpass.touched" required #confpass = "ngModel">
+      <small [class.d-none]= "confpass.valid || confpass.untouched">Confirm Password is required</small>
+    </div>
+    <div class =" form-group">
+      <input type = "text" name = "city" [(ngModel)] ="userdata.city" class="form-control" placeholder="City" 
+      [class.is-invalid] ="city.invalid && city.touched" required #city = "ngModel">
+      <small [class.d-none]= "city.valid || city.untouched">City is required</small>
+    </div>
+    <div class="form-group">
+      <button type ="submit" class="btn btn-success" [disabled] = "signupForm.form.invalid">Submit</button>
+    </div>
+  </form>
+</div>
